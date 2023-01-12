@@ -34,20 +34,21 @@ def welcome():
 
 
 @app.route("/api/v1.0/precipitation")
-# def names():
+def precipitation():
 #     # Create our session (link) from Python to the DB
-#     session = Session(engine)
+    session = Session(engine)
 
-#     """Return a list of all passenger names"""
-#     # Query all passengers
+# #     """Return a list of all precipation queries"""
+#     date_range = (dt.date(2017,8,23)) - (dt.timedelta(days=365))
+# #     # Query
 #     results = session.query(Passenger.name).all()
 
-#     session.close()
+    session.close()
 
 #Import other python file with query results
 
     # Convert list of tuples into normal list
-    all_names = list(np.ravel(results))
+    precip_data = list(np.ravel(results))
 
     return jsonify(all_names)
 
